@@ -28,15 +28,16 @@ function newGame (cellsNumber, containerElement) {
 }
 
 
-function getBombs (cellsNumber, bombsNumber) { //Funzione per creare laposizione casuale delle bombe
+function getBombs (cellsNumber, bombsNumber) { //Funzione per creare la posizione casuale delle bombe
     const bombsArray = [];
-
     while (bombPosition.lenght < bombsNumber) { 
     let bombPosition = Math.floor(Math.random() * cellsNumber + 1);
-        if ((bombsArray.includes(bombPosition)) == false ){
+        if (!bombsArray.includes(bombPosition)) {
             bombsArray.push(bombPosition);
         }
     }
+    console.log(bombsArray);
+    // return bombsArray;
 }
 
 

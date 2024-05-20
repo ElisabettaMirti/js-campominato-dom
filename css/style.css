@@ -36,9 +36,9 @@ section.grid > article.square{
     align-items: center;
 }
 
-section.grid > article.square.active{
+/* section.grid > article.square.active{
     
-}
+} */
 
 section.grid > article.square.safe{
     background-color: aqua;
