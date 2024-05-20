@@ -4,7 +4,7 @@ const gridEl = document.querySelector('section.grid'); //Variabile per il contai
 
 const playButton = document.querySelector('button'); //Variabile per bottone play
 
-
+const scoreEl = document.getElementById('punteggio');
 
 playButton.addEventListener('click', function() {
     newGame(100, gridEl);
@@ -15,36 +15,39 @@ playButton.addEventListener('click', function() {
 
 function newGame (cellsNumber, containerElement) {
     containerElement.innerHTML = ""; //svuoto la griglia
-    let punteggio = 0;  //variabile per il punteggio
+    let punteggio = 0; 
+    scoreEl.textContent = '';
     let bombsArray = getBombs(cellsNumber, 16); //chiamo la funzione per generare bombe
-    console.log(bombsArray);
     for (let i = 0; i < cellsNumber; i++){
         const squareEl = document.createElement('article');
         squareEl.classList.add('square');
         squareEl.append(i + 1);
-        
-
-
         squareEl.addEventListener('click', function(){
             if (bombsArray.includes(i + 1)){
                 squareEl.classList.add('bomb');
                 let celle = document.getElementsByClassName('square');
-                console.log(celle, 'celle')
                 for (let i = 0; i < bombsArray.length; i++){
                     let num = bombsArray[i] - 1;
                     celle[num].classList.add('bomb')
-                    console.log(num, 'num');
                 }
             } else {
                 squareEl.classList.add('safe');
+                punteggio += 1;
+                scoreEl.textContent = punteggio;
             }            
-            console.log(squareEl.innerText)
+            console.log(squareEl.textContent)
         });
-
         gridEl.appendChild(squareEl);
-
     }
+    
 }
+
+
+
+
+
+
+
 
 
 function getBombs (cellsNumber, bombsNumber) { //Funzione per creare la posizione casuale delle bombe
