@@ -17,12 +17,18 @@ function newGame (cellsNumber, containerElement) {
     containerElement.innerHTML = ""; //svuoto la griglia
     let punteggio = 0; 
     scoreEl.textContent = '';
+    let gameOver = false;
+
     let bombsArray = getBombs(cellsNumber, 16); //chiamo la funzione per generare bombe
     for (let i = 0; i < cellsNumber; i++){
         const squareEl = document.createElement('article');
         squareEl.classList.add('square');
         squareEl.append(i + 1);
-        squareEl.addEventListener('click', function(){
+
+        squareEl.addEventListener('click', function(){ //aggiungo eventListener
+            if(gameOver === true){
+                return
+            }
             if (bombsArray.includes(i + 1)){
                 squareEl.classList.add('bomb');
                 let celle = document.getElementsByClassName('square');
@@ -30,6 +36,8 @@ function newGame (cellsNumber, containerElement) {
                     let num = bombsArray[i] - 1;
                     celle[num].classList.add('bomb')
                 }
+                gameOver = true;
+                alert ('HAI PERSO');
             } else {
                 squareEl.classList.add('safe');
                 punteggio += 1;
