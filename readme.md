@@ -25,5 +25,5 @@ BONUS:
 >Creo una condizione per cui se clicco su una casella-bomba, vengono rivelate tutte le altre
     >Allo stesso tempo, il gioco deve finire
 
->Creo un'altra condizione(?) per aumentare il punteggio di 1 ogni volta che si clicca su una casella safe
+>Creo un'altra condizione per aumentare il punteggio di 1 ogni volta che si clicca su una casella safe
     >Anche il punteggio si deve azzerare ogni volta che clicco sul play
