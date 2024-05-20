@@ -1,0 +1,41 @@
+body{
+    font-family: sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+header>button{
+    margin-right: 3rem;
+    padding: .5rem 1rem;
+}
+
+section.grid{
+    width: 600px;
+    height: 600px;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+section.grid > article.square{
+    width: calc((100% / 10) - 2px);
+    height: calc((100% / 10) - 2px);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.grid > article.square.active{
+    background-color: aqua;
+}
