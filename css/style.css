@@ -37,5 +37,13 @@ section.grid > article.square{
 }
 
 section.grid > article.square.active{
+    
+}
+
+section.grid > article.square.safe{
     background-color: aqua;
+}
+
+section.grid > article.square.bomb{
+    background-color: red;
 }
